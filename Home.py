@@ -8,20 +8,20 @@ import pandas as pd
 
 gender_data = pd.read_csv('./data/onlinefoods.csv')
 
-html_example_table = """
-<div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>ตัวอย่างตารางข้อมูล</h3></center>
-</div>
-"""
-st.markdown(html_example_table, unsafe_allow_html=True)
-st.write(gender_data.head(10))
-
 html_count_by_age = """
 <div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>จำนวนเพศตามช่วงอายุ</h3></center>
+<center><h3>Gender Distribution by Age</h3></center>
 </div>
 """
 st.markdown(html_count_by_age, unsafe_allow_html=True)
+
+plt.figure(figsize=(15, 5))
+sns.countplot(x='Age', hue='Gender', data=gender_data)  # ใช้ countplot โดยกำหนด x เป็น 'Age' และ hue เป็น 'Gender'
+plt.title('Gender Distribution by Age')
+plt.xlabel('Age')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+st.pyplot()
 
 plt.figure(figsize=(15, 5))
 sns.countplot(x='Gender', data=gender_data)  # แก้เป็น gender_data แทน shopping_trends.csv
@@ -33,18 +33,19 @@ st.pyplot()
 
 html_sales_by_gender = """
 <div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>ยอดขายอาหาร</h3></center>
+<center><h3>Sales by Gender</h3></center>
 </div>
 """
 st.markdown(html_sales_by_gender, unsafe_allow_html=True)
 
 plt.figure(figsize=(15, 5))
-sns.countplot(x='Gender', data=gender_data)  # แก้เป็น gender_data แทน shopping_trends.csv
-plt.title('ยอดขายอาหาร')
-plt.xlabel('ภูมิภาค')
-plt.ylabel('จำนวน')
+sns.countplot(x='Gender', hue='Output', data=gender_data)  # ใช้ countplot โดยกำหนด x เป็น 'Gender' และ hue เป็น 'Output'
+plt.title('Sales by Gender')
+plt.xlabel('Gender')
+plt.ylabel('Count')
 plt.xticks(rotation=45)
 st.pyplot()
+
 
 
 
