@@ -6,7 +6,7 @@ import streamlit as st
 import seaborn as sns
 import pandas as pd
 
-gender_data = pd.read_csv('./data/shopping_trends.csv')
+gender_data = pd.read_csv('./data/onlinefoods.csv')
 
 html_example_table = """
 <div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
