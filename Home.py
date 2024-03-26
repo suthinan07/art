@@ -21,11 +21,7 @@ ax.tick_params(axis='x', rotation=45)
 st.pyplot(fig)
 
 # Gender Distribution
-html_gender_distribution = """
-<div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>Gender Distribution</h3></center>
-</div>
-"""
+html_gender_distribution = "<center><h3>Gender Distribution</h3></center>"
 st.markdown(html_gender_distribution, unsafe_allow_html=True)
 
 fig, ax = plt.subplots(figsize=(15, 5))
@@ -37,11 +33,7 @@ ax.tick_params(axis='x', rotation=45)
 st.pyplot(fig)
 
 # Sales by Gender
-html_sales_by_gender = """
-<div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>Sales by Gender</h3></center>
-</div>
-"""
+html_sales_by_gender = "<center><h3>Sales by Gender</h3></center>"
 st.markdown(html_sales_by_gender, unsafe_allow_html=True)
 
 fig, ax = plt.subplots(figsize=(15, 5))
