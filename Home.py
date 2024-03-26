@@ -8,11 +8,6 @@ import pandas as pd
 
 gender_data = pd.read_csv('./data/onlinefoods.csv')
 
-html_count_by_age = """
-<div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>Gender Distribution by Age</h3></center>
-</div>
-"""
 st.markdown(html_count_by_age, unsafe_allow_html=True)
 
 plt.figure(figsize=(15, 5))
@@ -31,11 +26,6 @@ plt.ylabel('จำนวน')
 plt.xticks(rotation=45)
 st.pyplot()
 
-html_sales_by_gender = """
-<div style="background-color:#0E1117;border-bottom: 3px solid #ffffff;border-top: 3px solid #ffffff;">
-<center><h3>Sales by Gender</h3></center>
-</div>
-"""
 st.markdown(html_sales_by_gender, unsafe_allow_html=True)
 
 plt.figure(figsize=(15, 5))
